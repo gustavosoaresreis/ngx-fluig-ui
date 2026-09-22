@@ -14,6 +14,8 @@ com o Fluig a partir de dentro do iframe. Esta biblioteca empacota isso.
   identidade visual da sua empresa entra sem fork.
 - **Mobile** — a barra e o rodapé se adaptam ao app Fluig Mobile.
 
+**[Ver demonstração ao vivo](https://gustavosoaresreis.github.io/ngx-fluig-ui/)**
+
 ## Instalação
 
 ```bash
@@ -221,6 +223,24 @@ A biblioteca assume o padrão mais comum de formulário de processo:
 
 Nada disso é obrigatório: sem esses elementos, os métodos correspondentes
 devolvem valores padrão em vez de quebrar a tela.
+
+## Desenvolvimento
+
+```bash
+npm install
+```
+
+| Comando | O que faz |
+| --- | --- |
+| `npm run build` | Empacota a biblioteca em `dist/` (ng-packagr) |
+| `npm run demo` | Sobe a página de demonstração em http://localhost:4210 |
+| `npm run build:demo` | Gera a demonstração em `docs/`, que o GitHub Pages publica |
+
+A demonstração fica em `demo/` e importa a biblioteca pelo código-fonte, via
+path mapping — então qualquer alteração aparece na hora, sem `npm link`.
+
+Para publicar a página: **Settings → Pages → Source: branch `main`, pasta
+`/docs`**. O `baseHref` já está configurado como `/ngx-fluig-ui/`.
 
 ## Licença
 

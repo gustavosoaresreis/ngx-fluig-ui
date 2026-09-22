@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR" data-beasties-container>
+<head><base href="/ngx-fluig-ui/">
+  <meta charset="utf-8">
+  <title>ngx-fluig-ui — demonstração</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Componentes Angular para formulários de processo do TOTVS Fluig: wizard de etapas, navegação, histórico e ações de decisão.">
+  <link rel="icon" href="data:,">
+<style>:root{color-scheme:light;--demo-fundo:#f3f4f6;--demo-superficie:#fff;--demo-borda:#e3e5e8;--demo-texto:#1f2328;--demo-texto-fraco:#656d76;--demo-destaque:#0d6efd}*{box-sizing:border-box}body{margin:0;background:var(--demo-fundo);color:var(--demo-texto);font-family:Inter,Segoe UI,system-ui,sans-serif;line-height:1.5}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
+<body>
+  <!--
+    Fora do Fluig estes campos não existem. A demonstração os cria à mão
+    porque é exatamente deles que o FluigService lê o estado do processo —
+    assim os componentes rodam aqui sem nenhuma adaptação.
+  -->
+  <input type="hidden" id="atividade" value="6">
+  <input type="hidden" id="formMode" value="EDIT">
+  <input type="hidden" id="selectDecisao" value>
+  <input type="hidden" id="observacaoValidacao" value>
+
+  <demo-root></demo-root>
+<script src="polyfills.js" type="module"></script><script src="main.js" type="module"></script></body>
+</html>

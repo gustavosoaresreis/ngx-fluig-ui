@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "demo": {
+      "projectType": "application",
+      "root": "demo",
+      "sourceRoot": "demo/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": {
+              "base": "docs",
+              "browser": ""
+            },
+            "index": "demo/src/index.html",
+            "browser": "demo/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "demo/tsconfig.app.json",
+            "styles": ["demo/src/styles.css"],
+            "baseHref": "/ngx-fluig-ui/"
+          },
+          "configurations": {
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "baseHref": "/"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "demo:build:development",
+            "port": 4210
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>ngx-fluig-ui — demonstração</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Componentes Angular para formulários de processo do TOTVS Fluig: wizard de etapas, navegação, histórico e ações de decisão." />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <!--
+    Fora do Fluig estes campos não existem. A demonstração os cria à mão
+    porque é exatamente deles que o FluigService lê o estado do processo —
+    assim os componentes rodam aqui sem nenhuma adaptação.
+  -->
+  <input type="hidden" id="atividade" value="6" />
+  <input type="hidden" id="formMode" value="EDIT" />
+  <input type="hidden" id="selectDecisao" value="" />
+  <input type="hidden" id="observacaoValidacao" value="" />
+
+  <demo-root></demo-root>
+</body>
+</html>
