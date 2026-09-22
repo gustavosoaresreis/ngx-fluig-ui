@@ -39,7 +39,6 @@ import {
         </p>
         <div class="demo-links">
           <a href="https://github.com/gustavosoaresreis/ngx-fluig-ui">GitHub</a>
-          <a href="https://www.npmjs.com/package/ngx-fluig-ui">npm</a>
         </div>
       </div>
     </header>

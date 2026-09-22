@@ -18,9 +18,16 @@ com o Fluig a partir de dentro do iframe. Esta biblioteca empacota isso.
 
 ## Instalação
 
+A biblioteca não está publicada em nenhum registro — instale direto do
+repositório:
+
 ```bash
-npm install ngx-fluig-ui
+npm install github:gustavosoaresreis/ngx-fluig-ui
 ```
+
+Como o pacote é distribuído pelo código-fonte, gere o build depois de
+instalar (ou clone o repositório e use `npm run build`, que produz o pacote
+em `dist/`).
 
 Requer Angular 17 ou superior.
 
