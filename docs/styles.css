@@ -1,1 +1,0 @@
-:root{color-scheme:light;--demo-fundo: #f3f4f6;--demo-superficie: #fff;--demo-borda: #e3e5e8;--demo-texto: #1f2328;--demo-texto-fraco: #656d76;--demo-destaque: #0d6efd}*{box-sizing:border-box}body{margin:0;background:var(--demo-fundo);color:var(--demo-texto);font-family:Inter,Segoe UI,system-ui,sans-serif;line-height:1.5}a{color:var(--demo-destaque)}

@@ -1,6 +1,10 @@
 node_modules/
 dist/
 out-tsc/
+
+# Build da demonstração: gerado pelo workflow do GitHub Pages a cada push,
+# por isso não vai versionado.
+docs/
 *.tgz
 .angular/
 .DS_Store

@@ -1,0 +1,52 @@
+name: Publicar demonstração
+
+on:
+  push:
+    branches: [main]
+  # Permite disparar manualmente pela aba Actions.
+  workflow_dispatch:
+
+# Permissões mínimas que o deploy para o Pages exige.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Um deploy por vez. `cancel-in-progress: false` deixa o que já está no ar
+# terminar em vez de abortar uma publicação pela metade.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Compila a biblioteca antes da demo: se um erro de tipagem entrar na
+      # lib, o workflow falha aqui em vez de publicar uma página quebrada.
+      - run: npm run build
+
+      - run: npm run build:demo
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

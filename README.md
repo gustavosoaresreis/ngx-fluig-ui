@@ -234,13 +234,15 @@ npm install
 | --- | --- |
 | `npm run build` | Empacota a biblioteca em `dist/` (ng-packagr) |
 | `npm run demo` | Sobe a página de demonstração em http://localhost:4210 |
-| `npm run build:demo` | Gera a demonstração em `docs/`, que o GitHub Pages publica |
+| `npm run build:demo` | Gera a demonstração em `docs/` (saída local, não versionada) |
 
 A demonstração fica em `demo/` e importa a biblioteca pelo código-fonte, via
 path mapping — então qualquer alteração aparece na hora, sem `npm link`.
 
-Para publicar a página: **Settings → Pages → Source: branch `main`, pasta
-`/docs`**. O `baseHref` já está configurado como `/ngx-fluig-ui/`.
+A publicação é automática: o workflow
+[`pages.yml`](.github/workflows/pages.yml) compila a biblioteca e a demo a
+cada push na `main` e publica no GitHub Pages. Para ligar, uma vez só:
+**Settings → Pages → Source: GitHub Actions**.
 
 ## Licença
 
